@@ -28,8 +28,9 @@ const app = () => {
 
     timeSelect.forEach(option => {
         option.addEventListener('click', function() {
-            fakeDuration = this.getAttribute("data-time");
-            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`
+            const add_time = this.getAttribute("data-time");
+            fakeDuration += Number(add_time);
+            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
         });
     });
 
